@@ -1,0 +1,17 @@
+Faceted tool user interface
+===========================
+
+Set up
+------
+
+    >>> self.loginAsPortalOwner()
+    >>> ftool = portal.portal_faceted
+
+Views
+-----
+
+    >>> view = ftool.unrestrictedTraverse('@@view')
+    >>> _ = view()
+
+    >>> add = ftool.unrestrictedTraverse('@@add')
+    >>> _ = add()

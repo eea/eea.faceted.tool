@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="eea.faceted.tool">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package=".profiles" />
+  <include package=".vocabularies" />
+  <include package=".storage" />
+  <include package=".search" />
+  <include package=".browser" />
+
+</configure>
