@@ -1,6 +1,5 @@
 from zope import schema
 from zope.interface import Interface
-from plone.app.vocabularies.catalog import SearchableTextSourceBinder
 from Products.ATContentTypes.interface import IATTopic
 
 class IPortalType(Interface):
@@ -16,12 +15,12 @@ class IPortalType(Interface):
         title=u'Provided interface',
         description=u'Interface to search for',
         vocabulary="eea.faceted.tool.vocabularies.ObjectProvides",
-        required=True
+        required=False
     )
 
     search_type = schema.Choice(
         title=u'Portal type',
         description=u'Portal type to search for',
-        vocabulary="plone.app.vocabularies.ReallyUserFriendlyTypes",
+        vocabulary="eea.faceted.tool.vocabularies.PortalTypes",
         required=False
     )

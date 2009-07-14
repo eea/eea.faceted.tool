@@ -17,6 +17,11 @@ product_globals = globals()
 
 ztc.installProduct('Five')
 
+# XXX Plone 2.x compatible
+try: import Products.FiveSite
+except ImportError: pass
+else: ztc.installProduct('FiveSite')
+
 # Import PloneTestCase - this registers more products with Zope as a side effect
 from Products.PloneTestCase.PloneTestCase import PloneTestCase
 from Products.PloneTestCase.PloneTestCase import setupPloneSite

@@ -7,4 +7,9 @@
     name="eea.faceted.tool.vocabularies.ObjectProvides"
     />
 
+  <utility
+    component=".types.PortalTypesVocabularyFactory"
+    name="eea.faceted.tool.vocabularies.PortalTypes"
+    />
+
 </configure>

@@ -5,6 +5,8 @@ from eea.faceted.tool.interfaces import IPortalType
 from eea.faceted.tool.storage.portaltype import PortalType
 
 class AddPage(PageAddForm):
+    """ Add page
+    """
     form_fields = Fields(IPortalType)
 
     def create(self, data):
@@ -23,4 +25,6 @@ class AddPage(PageAddForm):
         return "./@@view"
 
 class EditPage(PageEditForm):
+    """ Edit page
+    """
     form_fields = Fields(IPortalType)

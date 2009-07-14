@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="eea.faceted.tool.various" version="20090714-01"
+              handler="eea.faceted.tool.setuphandlers.setupVarious"
+              title="EEA Faceted Tool setup">
+   <dependency step="catalog"/>
+    EEA Faceted Tool installation step.
+ </import-step>
+</import-steps>

@@ -27,7 +27,7 @@ class PortalTypeNameChooser(NameChooser):
 
         i = 0
         new_name = name
-        while new_name in container and i <= ATTEMPTS:
+        while new_name in container.objectIds() and i <= ATTEMPTS:
             i += 1
             new_name = "%s-%d" % (name, i)
 
