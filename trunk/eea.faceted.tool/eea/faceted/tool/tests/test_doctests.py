@@ -34,4 +34,8 @@ def test_suite():
                   optionflags=OPTIONFLAGS,
                   package='eea.faceted.tool',
                   test_class=FacetedFunctionalTestCase),
+            Suite('docs/exportimport.txt',
+                  optionflags=OPTIONFLAGS,
+                  package='eea.faceted.tool',
+                  test_class=FacetedFunctionalTestCase),
     ))

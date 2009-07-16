@@ -6,4 +6,10 @@
    <dependency step="catalog"/>
     EEA Faceted Tool installation step.
  </import-step>
+ <import-step id="faceted" version="20090716-01"
+              handler="eea.faceted.tool.exportimport.importFacetedTool"
+              title="Faceted Settings">
+  <dependency step="toolset"/>
+    Import faceted settings
+ </import-step>
 </import-steps>
