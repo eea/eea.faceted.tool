@@ -20,10 +20,11 @@ class PortalTypeNameChooser(NameChooser):
 
     def chooseName(self, name, object):
         container = self.context
-        name = name or getattr(object, 'title', None)
-        name = name or object.__class__.__name__
+        name = name or getattr(object, 'title', '')
         safe = re.compile(r'[^_A-Za-z0-9\.\-\s]')
         name = safe.sub('', name)
+        name = name or object.__class__.__name__
+        name = name.strip()
 
         i = 0
         new_name = name

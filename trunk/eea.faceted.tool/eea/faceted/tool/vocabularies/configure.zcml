@@ -12,4 +12,9 @@
     name="eea.faceted.tool.vocabularies.PortalTypes"
     />
 
+<utility
+    component=".faceted.FacetedPortalTypesVocabularyFactory"
+    name="eea.faceted.tool.vocabularies.FacetedPortalTypes"
+    />
+
 </configure>
