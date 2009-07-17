@@ -1,6 +1,9 @@
+import logging
 from zope.interface import implements
 from types import StringTypes, TupleType, ListType, DictType
 from interfaces import IFacetedCatalog
+
+logger = logging.getLogger('eea.faceted.tool.search')
 ListTypes = (TupleType, ListType)
 
 class FacetedCatalog(object):
