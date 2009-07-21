@@ -13,13 +13,13 @@ class IPortalType(Interface):
     search_interface = schema.Choice(
         title=u'Provided interface',
         description=u'Interface to search for',
-        vocabulary="eea.faceted.tool.vocabularies.ObjectProvides",
+        vocabulary="eea.faceted.vocabularies.ObjectProvides",
         required=False
     )
 
     search_type = schema.Choice(
         title=u'Portal type',
         description=u'Portal type to search for',
-        vocabulary="eea.faceted.tool.vocabularies.PortalTypes",
+        vocabulary="eea.faceted.vocabularies.PortalTypes",
         required=False
     )

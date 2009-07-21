@@ -4,17 +4,17 @@
 
   <utility
     component=".catalog.ObjectProvidesVocabularyFactory"
-    name="eea.faceted.tool.vocabularies.ObjectProvides"
+    name="eea.faceted.vocabularies.ObjectProvides"
     />
 
   <utility
     component=".types.PortalTypesVocabularyFactory"
-    name="eea.faceted.tool.vocabularies.PortalTypes"
+    name="eea.faceted.vocabularies.PortalTypes"
     />
 
 <utility
     component=".faceted.FacetedPortalTypesVocabularyFactory"
-    name="eea.faceted.tool.vocabularies.FacetedPortalTypes"
+    name="eea.faceted.vocabularies.FacetedPortalTypes"
     />
 
 </configure>
