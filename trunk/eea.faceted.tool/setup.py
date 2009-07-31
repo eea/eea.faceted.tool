@@ -25,6 +25,7 @@ setup(name='eea.faceted.tool',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'eea.faceted.vocabularies',
       ],
       entry_points="""
       # -*- Entry points: -*-
