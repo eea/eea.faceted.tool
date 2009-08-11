@@ -1,6 +1,9 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
     i18n_domain="eea.faceted">
+
+  <five:registerPackage package="."/>
 
   <include package="eea.faceted.vocabularies" />
 
