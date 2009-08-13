@@ -7,27 +7,12 @@ from cgi import FieldStorage
 from ZPublisher.HTTPRequest import FileUpload
 from Products.Five import zcml
 from Products.Five import fiveconfigure
-from Testing import ZopeTestCase as ztc
-from zope.app.component.hooks import setSite
 
 product_globals = globals()
 
-# Let Zope know about the two products we require above-and-beyond a basic
-# Plone install (PloneTestCase takes care of these).
-
-ztc.installProduct('Five')
-
-# XXX Plone 2.x compatible
-try: import Products.FiveSite
-except ImportError: pass
-else: ztc.installProduct('FiveSite')
-
 # Import PloneTestCase - this registers more products with Zope as a side effect
-from Products.PloneTestCase.PloneTestCase import PloneTestCase
-from Products.PloneTestCase.PloneTestCase import setupPloneSite
-from Products.PloneTestCase.PloneTestCase import FunctionalTestCase
+from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
-
 
 @onsetup
 def setup_eea_faceted_tool():
@@ -44,25 +29,21 @@ def setup_eea_faceted_tool():
     zcml.load_config('configure.zcml', eea.faceted.tool)
     fiveconfigure.debug_mode = False
 
-EXTRA_PRODUCTS = []
+    ptc.installProduct('Five')
+
+    # XXX Plone 2.x compatible
+    try: import Products.FiveSite
+    except ImportError: pass
+    else: ptc.installProduct('FiveSite')
 
 setup_eea_faceted_tool()
-setupPloneSite(
-    products=EXTRA_PRODUCTS,
-    extension_profiles=('eea.faceted.tool.profiles:default',)
-)
+ptc.setupPloneSite(extension_profiles=('eea.faceted.tool:default',))
 
-class FacetedTestCase(PloneTestCase):
+class FacetedTestCase(ptc.PloneTestCase):
     """Base class for integration tests for the 'Faceted Tool' product.
     """
-    def _setup(self):
-        """ Setup test case
-        """
-        PloneTestCase._setup(self)
-        # Set the local component registry
-        setSite(self.portal)
 
-class FacetedFunctionalTestCase(FunctionalTestCase, FacetedTestCase):
+class FacetedFunctionalTestCase(ptc.FunctionalTestCase, FacetedTestCase):
     """Base class for functional integration tests for the 'Faceted Tool' product.
     """
     def loadfile(self, rel_filename, ctype='text/xml'):
