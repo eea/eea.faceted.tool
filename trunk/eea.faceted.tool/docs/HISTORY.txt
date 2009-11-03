@@ -1,8 +1,14 @@
 Changelog
 =========
 
-1.1
----
+1.2 (2009-11-xx)
+----------------
+
+* This package rely on plone.app.form. Added as dependency.
+
+
+1.1 (2009-11-02)
+----------------
 
 * Safe import _eioRegistry in order to make it work with Plone 3.3.x.
 

@@ -3,6 +3,7 @@
     i18n_domain="eea.faceted">
 
   <include file="profiles.zcml" />
+  <include package="plone.app.form" />
   <include package="eea.faceted.vocabularies" />
 
   <include package=".storage" />
