@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2 (2009-11-xx)
+1.2 (2009-11-09)
 ----------------
 
 * This package rely on plone.app.form. Added as dependency.
