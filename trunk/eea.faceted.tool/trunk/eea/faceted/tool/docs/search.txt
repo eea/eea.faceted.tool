@@ -50,3 +50,32 @@ Do some search
     ... )
     >>> [brain.getURL() for brain in brains]
     ['http://nohost/plone/sandbox']
+
+You can also map only object_provides index to a user friendly label
+
+    >>> data = {
+    ... 'title': 'Foo',
+    ... 'search_interface': '__builtin__.IFacetedFoo',
+    ... }
+    >>> faceted_type = add.createAndAdd(data)
+    >>> faceted_type
+    <PortalType at Foo>
+
+    >>> brains = faceted.search(portal_type=faceted_type.getId())
+    >>> [brain.getURL() for brain in brains]
+    ['http://nohost/plone/sandbox']
+
+... or you can map only portal_type index to something more meaningful
+
+    >>> data = {
+    ... 'title': 'Default plone folder',
+    ... 'search_type': 'Folder',
+    ... }
+    >>> faceted_type = add.createAndAdd(data)
+    >>> faceted_type
+    <PortalType at Default plone folder>
+
+    >>> brains = faceted.search(portal_type=faceted_type.getId())
+    >>> urls = [brain.getURL() for brain in brains]
+    >>> 'http://nohost/plone/sandbox' in urls
+    True

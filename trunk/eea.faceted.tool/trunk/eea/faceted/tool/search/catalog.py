@@ -1,3 +1,5 @@
+""" Seach utilities
+"""
 import logging
 from zope.interface import implements
 from types import StringTypes, TupleType, ListType, DictType
@@ -80,6 +82,9 @@ class FacetedCatalog(object):
             if faceted_search_interface and faceted_search_interface not in op_query:
                 op_query.append(faceted_search_interface)
 
-        return self.catalog(
-            object_provides=object_provides,
-            portal_type=portal_types, **query)
+        if portal_types.get('query', None):
+            query['portal_type'] = portal_types
+        if object_provides.get('query', None):
+            query['object_provides'] = object_provides
+
+        return self.catalog(**query)

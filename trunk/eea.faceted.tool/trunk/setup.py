@@ -1,14 +1,19 @@
-from setuptools import setup, find_packages
+""" EEA Faceted Tool Installer
+"""
 import os
+from setuptools import setup, find_packages
 
-version = '1.2'
+NAME = 'eea.faceted.tool'
+PATH = NAME.split('.') + ['version.txt']
+VERSION = open(os.path.join(*PATH)).read().strip()
 
-setup(name='eea.faceted.tool',
-      version=version,
+setup(name=NAME,
+      version=VERSION,
       description="EEA Faceted Tool",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      # Get more strings from
+      # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
