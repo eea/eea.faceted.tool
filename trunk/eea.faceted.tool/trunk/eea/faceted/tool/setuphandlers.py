@@ -10,6 +10,9 @@ def addObjectProvidesIndex(portal):
 def setupVarious(context):
     """ Do some various setup.
     """
+    if self.readDataFile('eeafacetedtool.txt') is None:
+        return
+
     portal = context.getSite()
 
     # Add object_provides index

@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.4 (Unreleased)
+----------------
+* Run profile importVarious only in eea.faceted.tool context [voineali]
+
+
 1.3 (2010-01-04)
 ----------------
 
