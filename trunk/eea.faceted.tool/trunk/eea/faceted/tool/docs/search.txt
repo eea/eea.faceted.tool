@@ -79,3 +79,27 @@ You can also map only object_provides index to a user friendly label
     >>> urls = [brain.getURL() for brain in brains]
     >>> 'http://nohost/plone/sandbox' in urls
     True
+
+If you want to filter brains using index _apply_index method you can use
+catalog.apply_index
+
+    >>> ctool = portal.portal_catalog
+    >>> index = ctool._catalog.getIndex('portal_type')
+    >>> rset, u = faceted.apply_index(index, 'Foo')
+    >>> [ctool.getpath(rid) for rid in rset]
+    ['/plone/sandbox']
+
+    >>> rset, u = faceted.apply_index(index, 'Faceted Test type')
+    >>> [ctool.getpath(rid) for rid in rset]
+    ['/plone/sandbox']
+
+    >>> rset, u = faceted.apply_index(index, 'Default plone folder')
+    >>> brains = [ctool.getpath(rid) for rid in rset]
+    >>> brains.sort()
+    >>> brains
+    ['/plone/Members/test_user_1_', '/plone/sandbox']
+
+    >>> rset, u = faceted.apply_index(index, 'Document')
+    >>> brains = [ctool.getpath(rid) for rid in rset]
+    >>> brains
+    ['/plone/front-page']
