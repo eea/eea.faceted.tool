@@ -3,6 +3,9 @@
 import logging
 from zope.interface import implements
 from types import StringTypes, TupleType, ListType, DictType
+
+from BTrees.IIBTree import IIBucket, IISet, weightedIntersection
+
 from interfaces import IFacetedCatalog
 
 logger = logging.getLogger('eea.faceted.tool.search')
@@ -52,6 +55,61 @@ class FacetedCatalog(object):
         if isinstance(index, DictType):
             return index.keys()
         return index
+
+    def _apply_index(self, index, value):
+        """ Default portal_catalog index apply_index
+        """
+        index_id = index.getId()
+
+        apply_index = getattr(index, '_apply_index', None)
+        if not apply_index:
+            return IIBucket(), (index_id,)
+
+        rset = apply_index({index_id: value})
+        if not rset:
+            return IIBucket(), (index_id,)
+
+        return rset
+
+    def apply_index(self, index, value):
+        """ Apply index according with portal type mapping
+        """
+        index_id = index.getId()
+        if index_id != 'portal_type':
+            return self._apply_index(index, value)
+
+        if value not in self.context.objectIds():
+            return self._apply_index(index, value)
+
+        facet = self.context._getOb(value)
+
+        rset = IIBucket()
+        ptype = getattr(facet, 'search_type', None)
+        if ptype:
+            rset = self._apply_index(index, ptype)
+            if rset:
+                rset = IISet(rset[0])
+
+        index = self.catalog._catalog.getIndex('object_provides')
+        if not index:
+            return rset, (index_id,)
+
+        interface = getattr(facet, 'search_interface', None)
+        if not interface:
+            return rset, (index_id,)
+
+        oset = self._apply_index(index, interface)
+        if not oset:
+            return rset, (index_id,)
+
+        oset = IISet(oset[0])
+
+        if not len(rset):
+            return oset, (index_id,)
+
+        u, rset = weightedIntersection(rset, oset)
+
+        return rset, (index_id,)
 
     def __call__(self, **query):
         portal_types = query.pop('portal_type', [])
