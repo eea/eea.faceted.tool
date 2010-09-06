@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5 (unreleased)
+1.5 (2010-09-06)
 ----------------
 * #3139 Define apply_index method on portal_faceted in order to be used by
   faceted counter [voineali]
