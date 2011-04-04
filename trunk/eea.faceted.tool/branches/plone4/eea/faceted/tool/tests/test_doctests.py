@@ -3,7 +3,7 @@
 import unittest
 import doctest
 from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
-from base import FacetedFunctionalTestCase
+from eea.faceted.tool.tests.base import FacetedFunctionalTestCase
 
 OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |

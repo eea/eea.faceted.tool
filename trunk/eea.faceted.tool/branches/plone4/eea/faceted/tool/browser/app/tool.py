@@ -1,3 +1,5 @@
+""" View controller
+"""
 from Products.Five import BrowserView
 
 class FacetedToolView(BrowserView):

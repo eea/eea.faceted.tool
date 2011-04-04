@@ -6,7 +6,7 @@ from types import StringTypes, TupleType, ListType, DictType
 
 from BTrees.IIBTree import IIBucket, IISet, weightedIntersection
 
-from interfaces import IFacetedCatalog
+from eea.faceted.tool.interfaces import IFacetedCatalog
 
 logger = logging.getLogger('eea.faceted.tool.search')
 ListTypes = (TupleType, ListType)
@@ -107,7 +107,7 @@ class FacetedCatalog(object):
         if not len(rset):
             return oset, (index_id,)
 
-        u, rset = weightedIntersection(rset, oset)
+        rset = weightedIntersection(rset, oset)[1]
 
         return rset, (index_id,)
 
@@ -122,8 +122,8 @@ class FacetedCatalog(object):
         if not common:
             return self.catalog(portal_type=portal_types, **query)
 
-        pt_query = portal_types['query'] = [pt for pt in pt_query
-                                            if pt not in common]
+        pt_query = portal_types['query'] = [py for py in pt_query
+                                            if py not in common]
 
         object_provides = query.pop('object_provides', [])
         object_provides = self._index2dict(object_provides)
@@ -137,7 +137,8 @@ class FacetedCatalog(object):
                 pt_query.append(faceted_search_type)
 
             faceted_search_interface = getattr(faceted, 'search_interface', '')
-            if faceted_search_interface and faceted_search_interface not in op_query:
+            if faceted_search_interface and (
+                faceted_search_interface not in op_query):
                 op_query.append(faceted_search_interface)
 
         if portal_types.get('query', None):

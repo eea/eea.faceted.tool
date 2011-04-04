@@ -13,7 +13,7 @@ class FacetedTool(Folder):
     """ A local utility storing all faceted navigation global settings """
     implements(IFacetedTool)
 
-    id  = 'portal_faceted'
+    id = 'portal_faceted'
     title = 'Manages faceted navigation global settings'
     meta_type = 'EEA Faceted Tool'
 

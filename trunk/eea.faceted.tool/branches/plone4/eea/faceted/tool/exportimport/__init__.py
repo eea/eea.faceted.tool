@@ -1,3 +1,5 @@
+""" Export / Import adapters to be used within GenericSetup
+"""
 import os
 from zope.component import queryMultiAdapter
 from Products.CMFCore.utils import getToolByName

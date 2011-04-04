@@ -1,3 +1,5 @@
+""" Portal type forms
+"""
 from zope.formlib.form import Fields, PageAddForm, PageEditForm, applyChanges
 
 from zope.app.container.interfaces import INameChooser
@@ -10,18 +12,25 @@ class AddPage(PageAddForm):
     form_fields = Fields(IPortalType)
 
     def create(self, data):
-        name = INameChooser(self.context).chooseName(data.get('title', ''), None)
+        """ Create
+        """
+        name = INameChooser(
+            self.context).chooseName(data.get('title', ''), None)
         ob = PortalType(id=name)
         applyChanges(ob, self.form_fields, data)
         return ob
 
     def add(self, obj):
+        """ Add
+        """
         name = obj.getId()
         self.context[name] = obj
         self._finished_add = True
         return obj
 
     def nextURL(self):
+        """ Next
+        """
         return "./@@view"
 
 class EditPage(PageEditForm):

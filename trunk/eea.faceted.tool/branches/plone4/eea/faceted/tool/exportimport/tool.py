@@ -45,7 +45,7 @@ class FacetedToolXMLAdapter(XMLAdapterBase):
             uid = child.getAttribute('name').encode('utf-8')
             obj_ids = self.context.objectIds()
             if uid in obj_ids and purge_child:
-                self.context.manage_delObjects([uid,])
+                self.context.manage_delObjects([uid, ])
                 continue
 
             portal_type = self.context._getOb(uid, None)

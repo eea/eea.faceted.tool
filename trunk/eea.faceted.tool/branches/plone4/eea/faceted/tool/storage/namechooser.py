@@ -1,3 +1,5 @@
+""" Namechooser
+"""
 import re
 from zope.interface import implements
 
@@ -15,15 +17,19 @@ class PortalTypeNameChooser(NameChooser):
     def __init__(self, context):
         self.context = context
 
-    def checkName(self, name, object):
+    def checkName(self, name, obj):
+        """ Check name
+        """
         return True
 
-    def chooseName(self, name, object):
+    def chooseName(self, name, obj):
+        """ Choose name
+        """
         container = self.context
-        name = name or getattr(object, 'title', '')
+        name = name or getattr(obj, 'title', '')
         safe = re.compile(r'[^_A-Za-z0-9\.\-\s]')
         name = safe.sub('', name)
-        name = name or object.__class__.__name__
+        name = name or obj.__class__.__name__
         name = name.strip()
 
         i = 0
@@ -32,5 +38,5 @@ class PortalTypeNameChooser(NameChooser):
             i += 1
             new_name = "%s-%d" % (name, i)
 
-        self.checkName(new_name, object)
+        self.checkName(new_name, obj)
         return new_name.encode('utf-8')

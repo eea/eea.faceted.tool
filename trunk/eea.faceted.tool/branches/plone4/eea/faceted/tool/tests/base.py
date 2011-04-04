@@ -31,11 +31,6 @@ def setup_eea_faceted_tool():
 
     ptc.installProduct('Five')
 
-    # XXX Plone 2.x compatible
-    try: import Products.FiveSite
-    except ImportError: pass
-    else: ptc.installProduct('FiveSite')
-
 setup_eea_faceted_tool()
 ptc.setupPloneSite(extension_profiles=('eea.faceted.tool:default',))
 
@@ -44,7 +39,8 @@ class FacetedTestCase(ptc.PloneTestCase):
     """
 
 class FacetedFunctionalTestCase(ptc.FunctionalTestCase, FacetedTestCase):
-    """Base class for functional integration tests for the 'Faceted Tool' product.
+    """ Base class for functional integration tests
+    for the 'Faceted Tool' product.
     """
     def loadfile(self, rel_filename, ctype='text/xml'):
         """ load a file
@@ -60,7 +56,8 @@ class FacetedFunctionalTestCase(ptc.FunctionalTestCase, FacetedTestCase):
         env = {'REQUEST_METHOD':'PUT'}
         headers = {'content-type' : ctype,
                    'content-length': len(data),
-                   'content-disposition':'attachment; filename=%s' % header_filename}
+                   'content-disposition':
+                        'attachment; filename=%s' % header_filename}
 
         fs = FieldStorage(fp=fp, environ=env, headers=headers)
         return FileUpload(fs)
