@@ -69,10 +69,9 @@ You probably got here by running something like (replace *myplonefoldername* wit
 
 Now, you need to run (please see remarks regarding your operating system below)::
 
- python bootstrap.py
+ ./install.sh
 
-This will create ``bin`` folder and ``bin/buildout`` script. If you any time want to change Python interpreter
-associated with buildout, or you need to update ``buildout`` script itself to newer version please rerun ``bootsrap.py``.
+This will create ``bin`` folder and ``bin/buildout`` script.
 
 Now you can run buildout script which will download all Python packages
 (.egg files) and create ``parts/`` and ``var/`` folder structure ::
@@ -150,9 +149,6 @@ Then the following installs dependencies::
 	sudo port install python26 py26-pil py26-distribute wget 
 	easy_install ZopeSkel
 
-When you run ``bootstrap.py``use the following command to make sure you are using Python interpreter from Macports::
-
-	python2.6 bootstrap.py
 
 Windows
 ========
