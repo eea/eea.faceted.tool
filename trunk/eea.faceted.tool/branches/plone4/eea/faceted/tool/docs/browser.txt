@@ -34,13 +34,13 @@ Add a custom portal type
     >>> browser.getControl('Add portal type').click()
     >>> browser.getControl(name='form.title').value = 'Custom Portal Type'
     >>> browser.getControl(name='form.search_interface').value = [
-    ...     'Products.ATContentTypes.interface.folder.IATFolder'
+    ...     'Products.ATContentTypes.interfaces.folder.IATFolder'
     ... ]
     >>> browser.getControl(name='form.search_type').value = ['Folder']
     >>> browser.getControl('Add').click()
     >>> 'Custom Portal Type' in browser.contents
     True
-    >>> 'Products.ATContentTypes.interface.folder.IATFolder' in browser.contents
+    >>> 'Products.ATContentTypes.interfaces.folder.IATFolder' in browser.contents
     True
     >>> 'Folder' in browser.contents
     True
@@ -51,5 +51,5 @@ Add a custom portal type
     >>> browser.getControl('Delete').click()
     >>> 'Custom Portal Type' in browser.contents
     False
-    >>> 'Products.ATContentTypes.interface.folder.IATFolder' in browser.contents
+    >>> 'Products.ATContentTypes.interfaces.folder.IATFolder' in browser.contents
     False

@@ -54,4 +54,4 @@ no value in this vocabulary, let's add a Folder to populate this vocabulary.
 Now let's check our vocabulary
 
     >>> [term.value for term in voc(portal)]
-    [..., 'Products.ATContentTypes.interface.folder.IATFolder', ...]
+    [..., 'Products.ATContentTypes.interfaces.folder.IATFolder', ...]

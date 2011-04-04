@@ -97,7 +97,7 @@ catalog.apply_index
     >>> brains = [ctool.getpath(rid) for rid in rset]
     >>> brains.sort()
     >>> brains
-    ['/plone/Members/test_user_1_', '/plone/sandbox']
+    ['/plone/Members', '/plone/Members/test_user_1_', '/plone/events', '/plone/news', '/plone/sandbox']
 
     >>> rset, u = faceted.apply_index(index, 'Document')
     >>> brains = [ctool.getpath(rid) for rid in rset]

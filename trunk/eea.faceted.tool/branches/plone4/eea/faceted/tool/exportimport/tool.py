@@ -1,6 +1,6 @@
 """ XML Adapter
 """
-from zope.app import zapi
+from zope.component import queryMultiAdapter
 from Products.GenericSetup.utils import XMLAdapterBase
 from Products.GenericSetup.interfaces import IBody
 from eea.faceted.tool.interfaces import IFacetedTool
@@ -24,7 +24,7 @@ class FacetedToolXMLAdapter(XMLAdapterBase):
         """
         node = self._getObjectNode('object')
         for portal_type in self.context.objectValues():
-            exporter = zapi.queryMultiAdapter((portal_type, self.environ), IBody)
+            exporter = queryMultiAdapter((portal_type, self.environ), IBody)
             node.appendChild(exporter.node)
         return node
 
@@ -53,7 +53,7 @@ class FacetedToolXMLAdapter(XMLAdapterBase):
                 add = self.context.unrestrictedTraverse('@@add')
                 portal_type = add.createAndAdd(dict(title=uid))
 
-            importer = zapi.queryMultiAdapter((portal_type, self.environ), IBody)
+            importer = queryMultiAdapter((portal_type, self.environ), IBody)
             importer.node = child
 
     node = property(_exportNode, _importNode)
