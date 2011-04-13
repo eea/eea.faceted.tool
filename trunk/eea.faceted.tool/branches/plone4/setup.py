@@ -3,33 +3,32 @@
 import os
 from setuptools import setup, find_packages
 
-NAME = 'eea.faceted.tool'
-PATH = NAME.split('.') + ['version.txt']
-VERSION = open(os.path.join(*PATH)).read().strip()
+name = 'eea.faceted.tool'
+path = name.split('.') + ['version.txt']
+version = open(os.path.join(*path)).read().strip()
 
-setup(name=NAME,
-      version=VERSION,
+setup(name=name,
+      version=version,
       description="EEA Faceted Tool",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from
-      # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Framework :: Plone",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='eea faceted navigation tool zope plone4',
+      keywords='EEA faceted navigation tool zope plone4',
       author='European Environment Agency',
       author_email="webadmin@eea europa eu",
-      url='http://svn.eionet.europa.eu/projects/Zope',
+      url="https://svn.eionet.europa.eu/projects/"
+          "Zope/browser/trunk/eea.faceted.tool",
       license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
+      packages=find_packages(exclude=['ez_setup', 'tests']),
       namespace_packages=['eea', 'eea.faceted'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
           'eea.faceted.vocabularies',
           'plone.app.form',
       ],
