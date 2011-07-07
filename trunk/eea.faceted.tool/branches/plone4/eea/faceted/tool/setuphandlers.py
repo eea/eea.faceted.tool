@@ -4,5 +4,5 @@
 def setupVarious(context):
     """ Do some various setup.
     """
-    if context.readDataFile('eeafacetedtool.txt') is None:
+    if context.readDataFile('eea.faceted.tool.txt') is None:
         return
