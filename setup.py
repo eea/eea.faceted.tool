@@ -19,7 +19,7 @@ setup(name=name,
         ],
       keywords='EEA faceted navigation tool zope plone4',
       author='European Environment Agency',
-      author_email="webadmin@eea europa eu",
+      author_email="webadmin@eea.europa.eu",
       url="https://svn.eionet.europa.eu/projects/"
           "Zope/browser/trunk/eea.faceted.tool",
       license='GPL',
