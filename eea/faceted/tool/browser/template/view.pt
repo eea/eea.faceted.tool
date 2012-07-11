@@ -7,14 +7,14 @@
 
 <div metal:fill-slot="prefs_configlet_main">
   <h1 class="documentFirstHeading"
-    i18n:translate="title-faceted-controlpanel">EEA Faceted Navigation Tool</h1>
+    i18n:translate="">EEA Faceted Navigation Tool</h1>
 
   <a href=""
     class="link-parent"
     tal:attributes="href string:$portal_url/plone_control_panel"
-    i18n:translate="label_up_to_plone_setup">Up to Site Setup</a>
+    i18n:translate="">Up to Site Setup</a>
 
-  <p i18n:translate="description-faceted-controlpanel">
+  <p i18n:translate="">
     Use the form below to define, change or remove custom portal types.
   </p>
 
