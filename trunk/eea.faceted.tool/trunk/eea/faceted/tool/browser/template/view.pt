@@ -63,10 +63,10 @@
       <input class="context" type="submit" value="Delete"
         tal:condition="portal_types"
         name="form.button.Delete"
-        i18n:attributes="value label-portaltype-faceted-delete" />
+        i18n:attributes="value" />
       <input class="context" type="submit" value="Add portal type"
         name="form.button.Add"
-        i18n:attributes="value label-portaltype-faceted-add;" />
+        i18n:attributes="value" />
     </div>
   </form>
 
