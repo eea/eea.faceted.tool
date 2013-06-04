@@ -3,6 +3,8 @@ Changelog
 
 4.3-dev - (unreleased)
 ----------------------
+* Change: updated link to site setup
+  [ghicale]
 
 4.2 - (2012-06-12)
 ------------------
@@ -11,7 +13,7 @@ Changelog
 
 4.1 - (2011-11-18)
 ------------------
-* Rerelease broken egg  
+* Re-release broken egg
 
 4.0 - (2011-11-18)
 ------------------
