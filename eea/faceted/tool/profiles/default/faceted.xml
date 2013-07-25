@@ -3,6 +3,6 @@
  <portal_type name="Video">
   <property name="title">Video File</property>
   <property name="search_type">File</property>
-  <property name="search_interface">p4a.video.interfaces.IVideoEnhanced</property>
+  <property name="search_interface">eea.mediacentre.interfaces.IVideo</property>
  </portal_type>
 </object>

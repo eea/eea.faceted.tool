@@ -3,6 +3,9 @@ Changelog
 
 4.4-dev - (unreleased)
 ----------------------
+* Change: set IVideo from eea.mediacentre instead of p4a.IVideoEnhanced for
+  file videos
+  [ichimdav 15234]
 
 4.3 - (2013-06-17)
 ------------------
