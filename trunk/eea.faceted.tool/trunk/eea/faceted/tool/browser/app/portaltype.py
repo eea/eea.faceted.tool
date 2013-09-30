@@ -2,7 +2,7 @@
 """
 from zope.formlib.form import Fields, PageAddForm, PageEditForm, applyChanges
 
-from zope.app.container.interfaces import INameChooser
+from zope.container.interfaces import INameChooser
 from eea.faceted.tool.interfaces import IPortalType
 from eea.faceted.tool.storage.portaltype import PortalType
 
