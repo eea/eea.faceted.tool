@@ -3,7 +3,7 @@
   i18n_domain="eea">
 
   <adapter
-    provides="zope.app.container.interfaces.INameChooser"
+    provides="zope.container.interfaces.INameChooser"
     for="..interfaces.IFacetedTool"
     factory=".namechooser.PortalTypeNameChooser"
     />

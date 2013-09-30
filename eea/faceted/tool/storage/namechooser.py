@@ -3,8 +3,8 @@
 import re
 from zope.interface import implements
 
-from zope.app.container.interfaces import INameChooser
-from zope.app.container.contained import NameChooser
+from zope.container.interfaces import INameChooser
+from zope.container.contained import NameChooser
 
 ATTEMPTS = 10000
 
