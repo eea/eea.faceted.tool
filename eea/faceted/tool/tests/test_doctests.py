@@ -16,7 +16,7 @@ def test_suite():
             Suite('README.txt',
                   optionflags=OPTIONFLAGS,
                   package='eea.faceted.tool',
-                  test_class=FacetedFunctionalTestCase) ,
+                  test_class=FacetedFunctionalTestCase),
             Suite('docs/browser.txt',
                   optionflags=OPTIONFLAGS,
                   package='eea.faceted.tool',
