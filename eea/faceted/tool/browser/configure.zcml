@@ -16,4 +16,10 @@
     permission="cmf.ModifyPortalContent"
     />
 
+    <browser:page name="edit"
+        for="..interfaces.IPortalType"
+        class=".app.portaltype.EditPage"
+        permission="cmf.ModifyPortalContent"
+    />
+
 </configure>
