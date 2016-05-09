@@ -1,18 +1,20 @@
 """ Base test cases
 """
-import os
 from StringIO import StringIO
-from App.Common import package_home
 from cgi import FieldStorage
-from ZPublisher.HTTPRequest import FileUpload
-from Products.Five import zcml
+
+import os
+
+from App.Common import package_home
 from Products.Five import fiveconfigure
-
-product_globals = globals()
-
+from Products.Five import zcml
+from ZPublisher.HTTPRequest import FileUpload
 # Import PloneTestCase - this registers more products with Zope as a side effect
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
+
+product_globals = globals()
+
 
 @onsetup
 def setup_eea_faceted_tool():
