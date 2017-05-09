@@ -57,4 +57,3 @@ class FacetedToolXMLAdapter(XMLAdapterBase):
             importer.node = child
 
     node = property(_exportNode, _importNode)
-

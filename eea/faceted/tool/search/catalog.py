@@ -1,8 +1,8 @@
 """ Seach utilities
 """
 import logging
-from zope.interface import implements
 from types import StringTypes, TupleType, ListType, DictType
+from zope.interface import implements
 
 from BTrees.IIBTree import IIBucket, IISet, weightedIntersection
 

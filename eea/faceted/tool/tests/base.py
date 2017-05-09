@@ -8,10 +8,10 @@ import os
 from App.Common import package_home
 from Products.Five import fiveconfigure
 from Products.Five import zcml
-from ZPublisher.HTTPRequest import FileUpload
 # Import PloneTestCase - this registers more products with Zope as a side effect
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
+from ZPublisher.HTTPRequest import FileUpload
 
 product_globals = globals()
 
