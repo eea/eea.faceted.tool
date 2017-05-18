@@ -11,6 +11,7 @@ from eea.faceted.tool.interfaces import IFacetedCatalog
 logger = logging.getLogger('eea.faceted.tool.search')
 ListTypes = (TupleType, ListType)
 
+
 class FacetedCatalog(object):
     """ Adapts portal_catalog to be used together with portal_faceted tool.
     """
@@ -104,7 +105,7 @@ class FacetedCatalog(object):
 
         oset = IISet(oset[0])
 
-        if not len(rset):
+        if not rset:
             return oset, (index_id,)
 
         rset = weightedIntersection(rset, oset)[1]
@@ -138,7 +139,7 @@ class FacetedCatalog(object):
 
             faceted_search_interface = getattr(faceted, 'search_interface', '')
             if faceted_search_interface and (
-                faceted_search_interface not in op_query):
+                    faceted_search_interface not in op_query):
                 op_query.append(faceted_search_interface)
 
         if portal_types.get('query', None):
