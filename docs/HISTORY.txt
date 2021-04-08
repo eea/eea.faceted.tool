@@ -2,7 +2,7 @@ Changelog
 =========
 
 5.7-dev0 - (unreleased)
----------------------
+--------------------------
 * Bug fix: fixed encoding on counter.
   [alecghica refs #131037]
 
