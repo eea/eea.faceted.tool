@@ -1,7 +1,7 @@
 Changelog
 =========
 
-5.7-dev0 - (unreleased)
+5.7 - (2021-04-08)
 --------------------------
 * Bug fix: fixed encoding on counter.
   [alecghica refs #131037]
